@@ -1,0 +1,21 @@
+@use './var.scss';
+@use './space.scss';
+
+@mixin linkAction($numw, $numh, $url) {
+	color: var.color('primary');
+	position: relative;
+	padding-right: calc(space.space(2) + 7px);
+
+	&::after {
+		content: '';
+		display: block;
+		width: $numw * 1px;
+		height: $numh * 1px;
+		background-image: url($url);
+		background-repeat: no-repeat;
+		position: absolute;
+		right: 0;
+		top: calc(50% - (#{$numh / 2.2}px));
+		
+	}
+}
